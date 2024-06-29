@@ -4295,7 +4295,7 @@ GameObject:
   - component: {fileID: 615139894}
   - component: {fileID: 615139893}
   m_Layer: 0
-  m_Name: Wysoki
+  m_Name: Szerszy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7496,8 +7496,8 @@ MonoBehaviour:
   wichOneWin: 0
   combinations: {fileID: 1566322627}
   randomWaitTimer: 0
-  pigeonOneAnimator: {fileID: 615139893}
-  pigeonTwoAnimator: {fileID: 1945669753}
+  isPlayerOneWon: 0
+  isPlayerTwoWon: 0
 --- !u!1 &1338851773
 GameObject:
   m_ObjectHideFlags: 0
@@ -8282,6 +8282,7 @@ GameObject:
   - component: {fileID: 1566322625}
   - component: {fileID: 1566322626}
   - component: {fileID: 1566322627}
+  - component: {fileID: 1566322628}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -8366,13 +8367,13 @@ MonoBehaviour:
   ValuesToID: 0000000001000000080000000500000003000000020000000100000004000000020000001100000003000000090000000f000000050000000b0000000e0000000a000000
   ultImagesOne:
   - {fileID: 21300000, guid: 42f9f765416237943b34bfb973883a28, type: 3}
-  - {fileID: 21300000, guid: c62dedda7c0f1cb4aa254fedf3a52c07, type: 3}
+  - {fileID: 21300000, guid: af1c609aca9a1904daec48a6f7c3613f, type: 3}
   - {fileID: 21300000, guid: ebc9f086658fd4040b3a96e3737c075f, type: 3}
   - {fileID: 21300000, guid: ce2a0c5534ac44f48b2fcea3d2d6f5a2, type: 3}
   - {fileID: 21300000, guid: be4b223b64a1d99488f984ff715544d7, type: 3}
   - {fileID: 21300000, guid: 02fd2b185a9ad864cb3328744462c049, type: 3}
   - {fileID: 21300000, guid: c8364d88d971cd146a1681349da053af, type: 3}
-  - {fileID: 21300000, guid: 49ef2d883fe928a45ac16c353a96ae88, type: 3}
+  - {fileID: 21300000, guid: b5cfdd62f0d41124ca59153dd1398996, type: 3}
   - {fileID: 21300000, guid: ec32d8bc4c59dac4f854adc3746e4e64, type: 3}
   - {fileID: 21300000, guid: 1b7f90ac2d1871c468318f0197697467, type: 3}
   - {fileID: 21300000, guid: 502bd7ac2a4fd9d42ada08f62ff1b617, type: 3}
@@ -8389,7 +8390,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f2b7a63479286a0468309d381af84aa9, type: 3}
   - {fileID: 21300000, guid: 2ce79bbf8d77fb545934908623d1b1e0, type: 3}
   - {fileID: 21300000, guid: 177cf405a2273ab4c84f26b83bb8e91a, type: 3}
-  - {fileID: 21300000, guid: b5cfdd62f0d41124ca59153dd1398996, type: 3}
+  - {fileID: 21300000, guid: 49ef2d883fe928a45ac16c353a96ae88, type: 3}
   - {fileID: 21300000, guid: 43e584058b4ceb94a8b94daad12ee856, type: 3}
   - {fileID: 21300000, guid: 71834e49477e6bb44a4afc9d9e17ca6d, type: 3}
   - {fileID: 21300000, guid: 5ca02af1274c35147ba1a8e0bddcb223, type: 3}
@@ -8404,6 +8405,21 @@ MonoBehaviour:
   isRandomTwo: 0
   isGoodOrBadOne: 0
   isGoodOrBadTwo: 0
+--- !u!114 &1566322628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566322623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d3aefbd0c0744b46992c3ca7b06c159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneAnimator: {fileID: 615139893}
+  twoAnimator: {fileID: 1945669753}
+  fight: {fileID: 1338781525}
 --- !u!1 &1601508042
 GameObject:
   m_ObjectHideFlags: 0
@@ -10145,7 +10161,7 @@ GameObject:
   - component: {fileID: 1945669754}
   - component: {fileID: 1945669753}
   m_Layer: 0
-  m_Name: Szeroki
+  m_Name: Wysoki
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

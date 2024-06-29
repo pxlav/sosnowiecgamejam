@@ -31,22 +31,22 @@ public class DrinkCombinations : MonoBehaviour
     {
         if(isRandomOne == true)
         {
-            if(isGoodOrBadOne == 0)
+            if(isGoodOrBadOne == 1)
             {
                 wichDrinkOne = "Neutral";
             }
-            if (isGoodOrBadOne == 1)
+            if (isGoodOrBadOne == 0)
             {
                 wichDrinkOne = "Bad";
             }
         }
         if (isRandomTwo == true)
         {
-            if (isGoodOrBadTwo == 0)
+            if (isGoodOrBadTwo == 1)
             {
                 wichDrinkTwo = "Neutral";
             }
-            if (isGoodOrBadTwo == 1)
+            if (isGoodOrBadTwo == 0)
             {
                 wichDrinkTwo = "Bad";
             }
@@ -133,11 +133,11 @@ public class DrinkCombinations : MonoBehaviour
             }
         }
         //Dar Kloacyny
-        if (barTender.elementNamesOne[0] == 16 || barTender.elementNamesOne[0] == 7 || barTender.elementNamesOne[0] == 12)
+        if (barTender.elementNamesOne[0] == 16 || barTender.elementNamesOne[0] == 7 || barTender.elementNamesOne[0] == 3)
         {
-            if (barTender.elementNamesOne[1] == 16 || barTender.elementNamesOne[1] == 7 || barTender.elementNamesOne[1] == 12)
+            if (barTender.elementNamesOne[1] == 16 || barTender.elementNamesOne[1] == 7 || barTender.elementNamesOne[1] == 3)
             {
-                if (barTender.elementNamesOne[2] == 16 || barTender.elementNamesOne[2] == 7 || barTender.elementNamesOne[2] == 12)
+                if (barTender.elementNamesOne[2] == 16 || barTender.elementNamesOne[2] == 7 || barTender.elementNamesOne[2] == 3)
                 {
                     wichDrinkOne = "Dar Kolacyny";
                     if (fight.wichOneWin == 0)

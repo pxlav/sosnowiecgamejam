@@ -13,13 +13,13 @@ public class Fight : MonoBehaviour
     public int wichOneWin;
     public DrinkCombinations combinations;
     public float randomWaitTimer;
-    public Animator pigeonOneAnimator;
-    public Animator pigeonTwoAnimator;
+    public bool isPlayerOneWon;
+    public bool isPlayerTwoWon;
     private void Start()
     {
-        playersScores[0] = 80;
-        playersScores[1] = 80;
-        endingTimer = 5.0f;
+        endingTimer = 2.0f;
+        playersScores[0] = 3;
+        playersScores[1] = 3;
         randomWaitTimer = 2f;
     }
 
@@ -42,76 +42,69 @@ public class Fight : MonoBehaviour
         {
             endingTimer -= Time.deltaTime;
             ending.Play("FirstZoom");
-            pigeonTwoAnimator.Play("Picie");
-            pigeonOneAnimator.Play("szerokipicie");
             if (endingTimer <= 0)
             {
-                PlayerOneWon();
+                isPlayerOneWon = true;
             }
         }
         if (playersScores[1] == 0)
         {
             ending.Play("SecondZoom");
-            pigeonOneAnimator.Play("szerokipicie");
-            pigeonTwoAnimator.Play("Picie");
             endingTimer -= Time.deltaTime;
             if (endingTimer <= 0)
             {
-                PlayerTwoWon();
+                isPlayerTwoWon = true;
             }
         }
-    }
-    public void PlayerOneWon()
-    {
-        if (combinations.isRandomOne == false)
+        if (isPlayerOneWon == true)
         {
-            gameLoop.whichState++;
-            wichOneWin = 0;
-        }
-        else
-        {
-            randomWaitTimer -= Time.deltaTime;
-            if (combinations.isGoodOrBadOne == 0)
+            if (combinations.isRandomOne == false)
             {
-                pigeonOneAnimator.Play("Rzyg");
-                if (randomWaitTimer <= 0)
+                gameLoop.whichState++;
+                wichOneWin = 0;
+            }
+            else
+            {
+                randomWaitTimer -= Time.deltaTime;
+                if (combinations.isGoodOrBadOne == 0)
                 {
-                    Application.LoadLevel(0);
+                    if (randomWaitTimer <= 0)
+                    {
+                        Application.LoadLevel(0);
+                    }
                 }
-            }
-            if (combinations.isGoodOrBadOne == 1)
-            {
-                pigeonOneAnimator.Play("Idle");
-                if (randomWaitTimer <= 0)
+                if (combinations.isGoodOrBadOne == 1)
                 {
-                    Application.LoadLevel(0);
+                    if (randomWaitTimer <= 0)
+                    {
+                        Application.LoadLevel(0);
+                    }
                 }
             }
         }
-    }
-    public void PlayerTwoWon()
-    {
-        if (combinations.isRandomTwo == false)
+        if (isPlayerTwoWon == true)
         {
-            gameLoop.whichState++;
-            wichOneWin = 1;
-        }else
-        {
-            randomWaitTimer -= Time.deltaTime;
-            if (combinations.isGoodOrBadOne == 0)
+            if (combinations.isRandomTwo == false)
             {
-                pigeonTwoAnimator.Play("SzerokiRzyg");
-                if (randomWaitTimer <= 0)
-                {
-                    Application.LoadLevel(0);
-                }
+                gameLoop.whichState++;
+                wichOneWin = 1;
             }
-            if (combinations.isGoodOrBadOne == 1)
+            else
             {
-                pigeonTwoAnimator.Play("Idle");
-                if (randomWaitTimer <= 0)
+                randomWaitTimer -= Time.deltaTime;
+                if (combinations.isGoodOrBadOne == 0)
                 {
-                    Application.LoadLevel(0);
+                    if (randomWaitTimer <= 0)
+                    {
+                        Application.LoadLevel(0);
+                    }
+                }
+                if (combinations.isGoodOrBadOne == 1)
+                {
+                    if (randomWaitTimer <= 0)
+                    {
+                        Application.LoadLevel(0);
+                    }
                 }
             }
         }
