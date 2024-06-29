@@ -12,8 +12,8 @@ public class Fight : MonoBehaviour
     public Animator ending;
     private void Start()
     {
-        playersScores[0] = 5;
-        playersScores[1] = 5;
+        playersScores[0] = 80;
+        playersScores[1] = 80;
         endingTimer = 5.0f;
     }
 

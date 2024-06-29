@@ -16,6 +16,7 @@ public class BarElement : MonoBehaviour
     public TextMeshPro itemFrame;
     public bool isClicked;
     public GameObject[] clickedUnlicked;
+    public MenuBook menubook;
 
     private void Start()
     {
@@ -41,7 +42,7 @@ public class BarElement : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (barTender.whichPlayer != 3 && isClicked == false)
+        if (barTender.whichPlayer != 3 && isClicked == false && menubook.isOn == false)
         {
             barTender.rPlayers[barTender.whichPlayer] += strenght;
             barTender.gPlayers[barTender.whichPlayer] += lose;
@@ -80,7 +81,7 @@ public class BarElement : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (barTender.whichPlayer != 3)
+        if (barTender.whichPlayer != 3 && menubook.isOn == false)
         {
             barTender.isMouseIn = true;
             itemFrame.text = elementName + " - " + elementDescription;

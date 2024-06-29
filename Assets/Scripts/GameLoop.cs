@@ -66,4 +66,8 @@ public class GameLoop : MonoBehaviour
     {
         whichState++;
     }
+    public void ExitButton()
+    {
+        Application.Quit();
+    }
 }
