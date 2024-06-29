@@ -10,11 +10,17 @@ public class Fight : MonoBehaviour
     public GameLoop gameLoop;
     public float endingTimer;
     public Animator ending;
+    public int wichOneWin;
+    public DrinkCombinations combinations;
+    public float randomWaitTimer;
+    public Animator pigeonOneAnimator;
+    public Animator pigeonTwoAnimator;
     private void Start()
     {
         playersScores[0] = 80;
         playersScores[1] = 80;
         endingTimer = 5.0f;
+        randomWaitTimer = 2f;
     }
 
     private void Update()
@@ -36,6 +42,8 @@ public class Fight : MonoBehaviour
         {
             endingTimer -= Time.deltaTime;
             ending.Play("FirstZoom");
+            pigeonTwoAnimator.Play("Picie");
+            pigeonOneAnimator.Play("szerokipicie");
             if (endingTimer <= 0)
             {
                 PlayerOneWon();
@@ -44,6 +52,8 @@ public class Fight : MonoBehaviour
         if (playersScores[1] == 0)
         {
             ending.Play("SecondZoom");
+            pigeonOneAnimator.Play("szerokipicie");
+            pigeonTwoAnimator.Play("Picie");
             endingTimer -= Time.deltaTime;
             if (endingTimer <= 0)
             {
@@ -53,10 +63,57 @@ public class Fight : MonoBehaviour
     }
     public void PlayerOneWon()
     {
-        gameLoop.whichState++;
+        if (combinations.isRandomOne == false)
+        {
+            gameLoop.whichState++;
+            wichOneWin = 0;
+        }
+        else
+        {
+            randomWaitTimer -= Time.deltaTime;
+            if (combinations.isGoodOrBadOne == 0)
+            {
+                pigeonOneAnimator.Play("Rzyg");
+                if (randomWaitTimer <= 0)
+                {
+                    Application.LoadLevel(0);
+                }
+            }
+            if (combinations.isGoodOrBadOne == 1)
+            {
+                pigeonOneAnimator.Play("Idle");
+                if (randomWaitTimer <= 0)
+                {
+                    Application.LoadLevel(0);
+                }
+            }
+        }
     }
     public void PlayerTwoWon()
     {
-        gameLoop.whichState++;
+        if (combinations.isRandomTwo == false)
+        {
+            gameLoop.whichState++;
+            wichOneWin = 1;
+        }else
+        {
+            randomWaitTimer -= Time.deltaTime;
+            if (combinations.isGoodOrBadOne == 0)
+            {
+                pigeonTwoAnimator.Play("SzerokiRzyg");
+                if (randomWaitTimer <= 0)
+                {
+                    Application.LoadLevel(0);
+                }
+            }
+            if (combinations.isGoodOrBadOne == 1)
+            {
+                pigeonTwoAnimator.Play("Idle");
+                if (randomWaitTimer <= 0)
+                {
+                    Application.LoadLevel(0);
+                }
+            }
+        }
     }
 }
