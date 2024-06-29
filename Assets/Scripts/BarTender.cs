@@ -24,6 +24,7 @@ public class BarTender : MonoBehaviour
     public GameObject midObj;
     public int[] elementNamesOne;
     public int[] elementNamesTwo;
+    public Barman barman;
     private void Start()
     {
         whichPlayer = 0;
@@ -32,6 +33,7 @@ public class BarTender : MonoBehaviour
         whichPlayer = 3;
         itemDesObj.SetActive(false);
         midObj.SetActive(false);
+        barman.PlayShake();
     }
 
     private void Update()
@@ -67,6 +69,7 @@ public class BarTender : MonoBehaviour
             }
             if (clickCounter >= 3 && clickCounter < 6 && waitTimer == 3.0f)
             {
+                barman.PlayShake();
                 whichTurnScreen[1].SetActive(true);
                 whichPlayer = 3;
             }

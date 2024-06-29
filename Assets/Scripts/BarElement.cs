@@ -17,7 +17,7 @@ public class BarElement : MonoBehaviour
     public bool isClicked;
     public GameObject[] clickedUnlicked;
     public MenuBook menubook;
-
+    public Barman barman;
     private void Start()
     {
         isClicked = false;
@@ -49,6 +49,7 @@ public class BarElement : MonoBehaviour
             barTender.bPlayers[barTender.whichPlayer] += drunk;
             Debug.Log(elementName);
             barTender.clickCounter += 1;
+            barman.PlayNalewanie();
             if (elementName != "Piwo" && elementName != "Kawa")
             {
                 isClicked = true;

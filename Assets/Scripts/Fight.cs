@@ -18,8 +18,8 @@ public class Fight : MonoBehaviour
     private void Start()
     {
         endingTimer = 2.0f;
-        playersScores[0] = 3;
-        playersScores[1] = 3;
+        playersScores[0] = 80;
+        playersScores[1] = 80;
         randomWaitTimer = 2f;
     }
 

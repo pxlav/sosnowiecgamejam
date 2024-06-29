@@ -240,14 +240,6 @@ public class DrinkCombinations : MonoBehaviour
                 }
             }
         }
-        //Polak
-        if (barTender.elementNamesOne[0] == 15 && barTender.elementNamesOne[1] == 15 && barTender.elementNamesOne[2] == 15)
-        {
-            wichDrinkOne = "Polak";
-            if (fight.wichOneWin == 0)
-                ultObject.sprite = ultImagesOne[8];
-            isRandomOne = false;
-        }
         if (barTender.elementNamesOne[0] == 9 || barTender.elementNamesOne[0] == 5 || barTender.elementNamesOne[0] == 15)
         {
             if (barTender.elementNamesOne[1] == 9 || barTender.elementNamesOne[1] == 5 || barTender.elementNamesOne[1] == 15)
@@ -260,12 +252,6 @@ public class DrinkCombinations : MonoBehaviour
                     isRandomOne = false;
                 }
             }
-        }
-        if (barTender.elementNamesTwo[0] == 15 && barTender.elementNamesTwo[1] == 15 && barTender.elementNamesTwo[2] == 15)
-        {
-            wichDrinkTwo = "Polak";
-            ultObject.sprite = ultImagesTwo[8];
-            isRandomTwo = false;
         }
         if (barTender.elementNamesTwo[0] == 9 || barTender.elementNamesTwo[0] == 5 || barTender.elementNamesTwo[0] == 15)
         {
