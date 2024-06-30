@@ -22,11 +22,9 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2800000, guid: 6c6b86d2c39129c4da5981b8bfd74d8b, type: 3}
-    - time: 0.6
-      value: {fileID: 2800000, guid: 9cfbc1ddadc3c57448e796f3163a4060, type: 3}
-    - time: 1.25
+    - time: 0.25
       value: {fileID: 2800000, guid: cda6793b8177bea4387d395b82019e13, type: 3}
-    - time: 3.1
+    - time: 0.55
       value: {fileID: 2800000, guid: cda6793b8177bea4387d395b82019e13, type: 3}
     attribute: m_Texture
     path: 
@@ -51,7 +49,6 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 2800000, guid: 6c6b86d2c39129c4da5981b8bfd74d8b, type: 3}
-    - {fileID: 2800000, guid: 9cfbc1ddadc3c57448e796f3163a4060, type: 3}
     - {fileID: 2800000, guid: cda6793b8177bea4387d395b82019e13, type: 3}
     - {fileID: 2800000, guid: cda6793b8177bea4387d395b82019e13, type: 3}
   m_AnimationClipSettings:
@@ -59,7 +56,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.1499999
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

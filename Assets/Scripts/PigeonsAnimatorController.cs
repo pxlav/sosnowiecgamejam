@@ -7,6 +7,11 @@ public class PigeonsAnimatorController : MonoBehaviour
     public Animator oneAnimator;
     public Animator twoAnimator;
     public Fight fight;
+    private void Start()
+    {
+        oneAnimator.Play("Idle");
+        twoAnimator.Play("Idle");
+    }
 
     private void Update()
     {

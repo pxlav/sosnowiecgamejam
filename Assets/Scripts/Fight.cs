@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Fight : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class Fight : MonoBehaviour
     public AudioSource swierszcz;
     public AudioSource swierszcz2;
     public AudioSource tudum;
+    public TextMeshProUGUI whoWin;
+    public Multiplayer multi;
     private void Start()
     {
         endingTimer = 2.0f;
@@ -53,6 +56,7 @@ public class Fight : MonoBehaviour
             if (endingTimer <= 0)
             {
                 isPlayerOneWon = true;
+                whoWin.text = "Wygra³ " + multi.playerNames[0];
             }
         }
         if (playersScores[1] == 0)
@@ -62,12 +66,14 @@ public class Fight : MonoBehaviour
             if (endingTimer <= 0)
             {
                 isPlayerTwoWon = true;
+                whoWin.text = "Wygra³ " + multi.playerNames[1];
             }
         }
         if (isPlayerOneWon == true)
         {
             if (combinations.isRandomOne == false)
             {
+                
                 gameLoop.whichState++;
                 wichOneWin = 0;
                 tudum.Play();
