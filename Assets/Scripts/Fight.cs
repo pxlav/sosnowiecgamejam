@@ -16,6 +16,11 @@ public class Fight : MonoBehaviour
     public bool isPlayerOneWon;
     public bool isPlayerTwoWon;
     public AudioSource gulpSound;
+    public AudioSource vomit;
+    public AudioSource vomit2;
+    public AudioSource swierszcz;
+    public AudioSource swierszcz2;
+    public AudioSource tudum;
     private void Start()
     {
         endingTimer = 2.0f;
@@ -65,12 +70,14 @@ public class Fight : MonoBehaviour
             {
                 gameLoop.whichState++;
                 wichOneWin = 0;
+                tudum.Play();
             }
             else
             {
                 randomWaitTimer -= Time.deltaTime;
                 if (combinations.isGoodOrBadOne == 0)
                 {
+                    vomit.mute = false;
                     if (randomWaitTimer <= 0)
                     {
                         Application.LoadLevel(0);
@@ -78,6 +85,7 @@ public class Fight : MonoBehaviour
                 }
                 if (combinations.isGoodOrBadOne == 1)
                 {
+                    swierszcz.mute = false; ;
                     if (randomWaitTimer <= 0)
                     {
                         Application.LoadLevel(0);
@@ -91,19 +99,24 @@ public class Fight : MonoBehaviour
             {
                 gameLoop.whichState++;
                 wichOneWin = 1;
+                tudum.Play();
             }
             else
             {
                 randomWaitTimer -= Time.deltaTime;
-                if (combinations.isGoodOrBadOne == 0)
+                if (combinations.isGoodOrBadOne == 1)
                 {
+                    vomit2.mute = false;
+                    Debug.Log("VOMIT");
                     if (randomWaitTimer <= 0)
                     {
                         Application.LoadLevel(0);
                     }
                 }
-                if (combinations.isGoodOrBadOne == 1)
+                if (combinations.isGoodOrBadOne == 0)
                 {
+                    swierszcz2.mute = false;
+                    Debug.Log("SWIERSZCZ");
                     if (randomWaitTimer <= 0)
                     {
                         Application.LoadLevel(0);

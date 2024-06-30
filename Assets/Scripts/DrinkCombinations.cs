@@ -78,6 +78,33 @@ public class DrinkCombinations : MonoBehaviour
                 }
             }
         }
+        //Ragnarok
+        if (barTender.elementNamesOne[0] == 1 || barTender.elementNamesOne[0] == 15 || barTender.elementNamesOne[0] == 12)
+        {
+            if (barTender.elementNamesOne[1] == 1 || barTender.elementNamesOne[1] == 15 || barTender.elementNamesOne[1] == 12)
+            {
+                if (barTender.elementNamesOne[2] == 1 || barTender.elementNamesOne[2] == 15 || barTender.elementNamesOne[2] == 12)
+                {
+                    if (fight.wichOneWin == 0)
+                        ultObject.sprite = ultImagesOne[8];
+                    wichDrinkOne = "Polak";
+                    isRandomOne = false;
+                }
+            }
+        }
+        if (barTender.elementNamesTwo[0] == 1 || barTender.elementNamesTwo[0] == 15 || barTender.elementNamesTwo[0] == 12)
+        {
+            if (barTender.elementNamesTwo[1] == 1 || barTender.elementNamesTwo[1] == 15 || barTender.elementNamesTwo[1] == 12)
+            {
+                if (barTender.elementNamesTwo[2] == 1 || barTender.elementNamesTwo[2] == 15 || barTender.elementNamesTwo[2] == 12)
+                {
+                    wichDrinkTwo = "Polak";
+                    if (fight.wichOneWin == 1)
+                        ultObject.sprite = ultImagesTwo[8];
+                    isRandomTwo = false;
+                }
+            }
+        }
         //Pocalunek posejdona
         if (barTender.elementNamesOne[0] == 6 || barTender.elementNamesOne[0] == 13 || barTender.elementNamesOne[0] == 14)
         {

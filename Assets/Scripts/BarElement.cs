@@ -47,7 +47,6 @@ public class BarElement : MonoBehaviour
             barTender.rPlayers[barTender.whichPlayer] += strenght;
             barTender.gPlayers[barTender.whichPlayer] += lose;
             barTender.bPlayers[barTender.whichPlayer] += drunk;
-            Debug.Log(elementName);
             barTender.clickCounter += 1;
             barman.PlayNalewanie();
             if (elementName != "Piwo" && elementName != "Kawa")
