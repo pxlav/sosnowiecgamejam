@@ -15,6 +15,7 @@ public class Fight : MonoBehaviour
     public float randomWaitTimer;
     public bool isPlayerOneWon;
     public bool isPlayerTwoWon;
+    public AudioSource gulpSound;
     private void Start()
     {
         endingTimer = 2.0f;
@@ -32,10 +33,12 @@ public class Fight : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W) && playersScores[0] > 0)
             {
                 playersScores[0] -= 1;
+                gulpSound.Play();
             }
             if (Input.GetKeyDown(KeyCode.UpArrow) && playersScores[1] > 0)
             {
                 playersScores[1] -= 1;
+                gulpSound.Play();
             }
         }
         if (playersScores[0] == 0)

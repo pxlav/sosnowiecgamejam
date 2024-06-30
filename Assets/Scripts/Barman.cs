@@ -9,6 +9,8 @@ public class Barman : MonoBehaviour
     public bool isPlayNalewanie;
     public float nalewanieTimer;
     public float shakeTimer;
+    public AudioSource shakeSound;
+    public AudioSource nalewanieSound;
     private void Start()
     {
         nalewanieTimer = 0.4f;
@@ -45,9 +47,11 @@ public class Barman : MonoBehaviour
     public void PlayShake()
     {
         isPlayShake = true;
+        shakeSound.Play();
     }
     public void PlayNalewanie()
     {
         isPlayNalewanie = true;
+        nalewanieSound.Play();
     }
 }

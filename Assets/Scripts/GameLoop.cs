@@ -8,6 +8,7 @@ public class GameLoop : MonoBehaviour
     public GameObject[] gameScreens;
     public GameObject[] gameplayStates;
     public BarTender bartender;
+    public GameObject menuMusic;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameLoop : MonoBehaviour
             gameScreens[3].SetActive(false);
             gameplayStates[0].SetActive(false);
             gameplayStates[1].SetActive(false);
+            menuMusic.SetActive(true);
         }
         if (whichState == 1)
         {
@@ -33,6 +35,7 @@ public class GameLoop : MonoBehaviour
             gameScreens[3].SetActive(false);
             gameplayStates[0].SetActive(false);
             gameplayStates[1].SetActive(false);
+            menuMusic.SetActive(true);
         }
         if (whichState == 2)
         {
@@ -42,6 +45,7 @@ public class GameLoop : MonoBehaviour
             gameScreens[3].SetActive(false);
             gameplayStates[0].SetActive(true);
             gameplayStates[1].SetActive(false);
+            menuMusic.SetActive(false);
         }
         if (whichState == 3)
         {
@@ -51,6 +55,7 @@ public class GameLoop : MonoBehaviour
             gameScreens[3].SetActive(false);
             gameplayStates[0].SetActive(false);
             gameplayStates[1].SetActive(true);
+            menuMusic.SetActive(false);
         }
         if (whichState == 4)
         {
@@ -60,6 +65,7 @@ public class GameLoop : MonoBehaviour
             gameScreens[3].SetActive(true);
             gameplayStates[0].SetActive(false);
             gameplayStates[1].SetActive(false);
+            menuMusic.SetActive(false);
         }
     }
     public void PlayButton()
