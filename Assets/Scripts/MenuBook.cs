@@ -40,7 +40,7 @@ public class MenuBook : MonoBehaviour
     }
     public void NextPage()
     {
-        if (wichPage < 2)
+        if (wichPage < 3)
             wichPage++;
     }
     public void backpage()

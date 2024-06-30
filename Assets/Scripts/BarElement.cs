@@ -49,10 +49,7 @@ public class BarElement : MonoBehaviour
             barTender.bPlayers[barTender.whichPlayer] += drunk;
             barTender.clickCounter += 1;
             barman.PlayNalewanie();
-            if (elementName != "Piwo" && elementName != "Kawa")
-            {
-                isClicked = true;
-            }
+            isClicked = true;
             if (barTender.whichPlayer == 0)
             {
                 for (int i = 0; i < 3; i++)
